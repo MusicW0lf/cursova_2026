@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+*.egg
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+.env.*
+
+# Locust / benchmark results
+benchmark/ecommerce/results_*.csv
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+docker-compose.override.yml
+# Docker secrets
+docker.env
+
+# uv
+# uv.lock - keep this! it should be committed for reproducibility
+
+# Python version (optional, can commit for consistency)
+# .python-version
