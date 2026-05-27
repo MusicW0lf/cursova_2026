@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: db-benchmark
+Version: 0.1.0
+Summary: Database benchmarking system using FastAPI
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: fastapi
+Requires-Dist: pydantic[email]>=2.13.4
+Requires-Dist: uvicorn[standard]
+Provides-Extra: postgres
+Requires-Dist: sqlalchemy; extra == "postgres"
+Requires-Dist: psycopg2-binary; extra == "postgres"
+Provides-Extra: redis
+Requires-Dist: redis; extra == "redis"
+Provides-Extra: neo4j
+Requires-Dist: neo4j; extra == "neo4j"
+Provides-Extra: mongodb
+Requires-Dist: beanie==2.0.0; extra == "mongodb"
+Requires-Dist: motor>=3.7.1; extra == "mongodb"
+Provides-Extra: benchmark
+Requires-Dist: faker>=40.15.0; extra == "benchmark"
+Requires-Dist: httpx>=0.28.1; extra == "benchmark"
+Requires-Dist: locust>=2.44.0; extra == "benchmark"

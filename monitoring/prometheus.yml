@@ -1,0 +1,42 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  # FastAPI services — custom metrics
+  - job_name: ecommerce_postgres
+    static_configs:
+      - targets: ["ecommerce_postgres_api:8000"]
+    metrics_path: /metrics
+
+  - job_name: ecommerce_mongo
+    static_configs:
+      - targets: ["ecommerce_mongo_api:8000"]
+    metrics_path: /metrics
+
+  - job_name: ecommerce_neo4j
+    static_configs:
+      - targets: ["ecommerce_neo4j_api:8000"]
+    metrics_path: /metrics
+
+  - job_name: ecommerce_redis
+    static_configs:
+      - targets: ["ecommerce_redis_api:8000"]
+    metrics_path: /metrics
+
+  # DB exporters
+  - job_name: postgres_exporter
+    static_configs:
+      - targets: ["postgres_exporter:9187"]
+
+  - job_name: mongodb_exporter
+    static_configs:
+      - targets: ["mongodb_exporter:9216"]
+
+  - job_name: redis_exporter
+    static_configs:
+      - targets: ["redis_exporter:9121"]
+
+  - job_name: neo4j
+    static_configs:
+      - targets: ["neo4j_db:2004"]
+    metrics_path: /metrics

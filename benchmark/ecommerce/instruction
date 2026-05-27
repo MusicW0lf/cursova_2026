@@ -1,0 +1,27 @@
+# 1. make sure all containers are up
+docker compose up -d
+
+# 2. seed all 4 DBs
+python benchmark/seed.py
+
+# 3. run locust (we'll write locustfile.py next)
+locust -f benchmark/locustfile.py
+
+# 4. after test — cleanup
+python benchmark/cleanup.py
+
+
+
+
+
+# seed first
+python benchmark/ecommerce/seed.py
+
+# run locust
+locust -f benchmark/ecommerce/locustfile.py
+
+# open http://localhost:8089
+# set total users: 100, spawn rate: 10, run for 5 minutes
+
+# cleanup after
+python benchmark/ecommerce/cleanup.py

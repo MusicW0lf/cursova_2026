@@ -1,0 +1,36 @@
+[project]
+name = "db-benchmark"
+version = "0.1.0"
+description = "Database benchmarking system using FastAPI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "black>=26.5.1",
+  "fastapi",
+  "prometheus-client>=0.25.0",
+  "pydantic[email]>=2.13.4",
+  "uvicorn[standard]",
+]
+
+[project.optional-dependencies]
+postgres = [
+    "sqlalchemy",
+    "psycopg2-binary",
+]
+redis = [
+    "redis",
+]
+neo4j = [
+    "neo4j",
+]
+mongodb = [
+    "beanie==2.0.0",
+    "motor>=3.7.1",
+]
+benchmark = [
+    "faker>=40.15.0",
+    "httpx>=0.28.1",
+    "locust>=2.44.0",
+]
+[tool.setuptools]
+packages = []
